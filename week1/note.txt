@@ -1,1 +1,2 @@
 How to connect Rstudio to GitHub
+Push to commit to GitHub
