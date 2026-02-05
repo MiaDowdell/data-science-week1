@@ -59,6 +59,7 @@ penguins_clean_names |>
   ) |> 
   mutate(sex = stringr::str_to_title(sex))
 
+#Renaming 
 str_to_upper("Adelie")
 str_to_upper("Gentoo")
 str_to_upper("Chinstrap")
