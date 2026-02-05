@@ -2,7 +2,7 @@
 TUTORIAL 1: CHECKING STRINGS - APPLICATION CHECKLIST
 ================================================================================
 
-[ ] I completed the tutorial exercises
+[x] I completed the tutorial exercises
 
 
 CONNECTING TO MY DATA:
@@ -10,33 +10,33 @@ CONNECTING TO MY DATA:
 
 1. Did I identify any string-related questions in my Week 1 questions list?
 
-   [ ] YES - Question #(s): ___________
+   [x] YES - Question #(s): Lots of N/A values throughout multiple columns, inconsistent dash work and capitalisation
    [ ] NO - Skip to question 4
 
 
 2. If YES, which technique from this tutorial could help address my question?
 
-   [ ] str_to_lower() - standardize capitalization
-   [ ] str_to_upper() - standardize capitalization  
+   [x] str_to_lower() - standardize capitalization
+   [x] str_to_upper() - standardize capitalization  
    [ ] str_trim() - remove leading/trailing whitespace
-   [ ] str_replace() - fix typos or inconsistent spellings
+   [x] str_replace() - fix typos or inconsistent spellings
    [ ] Other: ___________
    [ ] None of these apply
 
 
 3. Show what this technique would DO to my data:
 
-   Variable name: ___________
+   Variable name: treatment 
    
    Example values BEFORE:
-   - 
-   - 
-   - 
+   - HIGH-DOSE
+   - Control
+   - Medium-dose 
    
    What they would become AFTER:
-   - 
-   - 
-   - 
+   - high-dose
+   - control
+   - medium-dose
 
 
 4. If this tutorial is NOT relevant to my data:
@@ -53,7 +53,7 @@ CONNECTING TO MY DATA:
 TUTORIAL 2: CHECKING DATES - APPLICATION CHECKLIST
 ================================================================================
 
-[ ] I completed the tutorial exercises
+[x] I completed the tutorial exercises
 
 
 
@@ -63,7 +63,7 @@ CONNECTING TO MY DATA:
 1. Did I identify any date-related questions in my Week 1 questions list?
 
    [ ] YES - Question #(s): ___________
-   [ ] NO - Skip to question 5
+   [x] NO - Skip to question 5
 
 
 2. If YES, which technique from this tutorial could help address my question?
@@ -94,13 +94,13 @@ CONNECTING TO MY DATA:
 
    What assumption am I making about date format?
    (e.g., "01/12/2023 is DD/MM/YYYY not MM/DD/YYYY")
-   
+   I could be in american date standards - MM/DD or vice versa, there is no way of knowing without looking at the whole dataset
    
    What could go wrong if this assumption is incorrect?
-   
+   Data is placed under the wrong dates and could potenitally mess up the basis of the scientific study (looking at a species over multiple days)
    
    How could I verify my assumption is correct?
-   
+   Not sure 
 
 
 5. If this tutorial is NOT relevant to my data:
@@ -118,7 +118,7 @@ CONNECTING TO MY DATA:
 TUTORIAL 3: CHECKING MISSING DATA PATTERNS - APPLICATION CHECKLIST
 ================================================================================
 
-[ ] I completed the tutorial exercises
+[x] I completed the tutorial exercises
 
 
 CONNECTING TO MY DATA:
@@ -126,7 +126,7 @@ CONNECTING TO MY DATA:
 
 1. Did I identify any missing data questions in my Week 1 questions list?
 
-   [ ] YES - Question #(s): ___________
+   [x] YES - Question #(s): Lots of NA values
    [ ] NO - But I'll check anyway (missing data is common)
 
 
@@ -141,18 +141,18 @@ CONNECTING TO MY DATA:
 
 
    [ ] MCAR (Missing Completely At Random) - appears random/scattered
-   [ ] MAR (Missing At Random) - related to other observed variables
+   [x] MAR (Missing At Random) - related to other observed variables
    [ ] MNAR (Missing Not At Random) - related to the missing value itself
 
 Why is it important to know what type of missing data we have? 
-
+Determines how you go about fixing it with code
 ===============================================================
 
 ================================================================================
 TUTORIAL 4: CHECKING DUPLICATES - APPLICATION CHECKLIST
 ================================================================================
 
-[ ] I completed the tutorial exercises
+[x] I completed the tutorial exercises
 
 
 CONNECTING TO MY DATA:
@@ -161,17 +161,17 @@ CONNECTING TO MY DATA:
 1. Did I identify any duplicate-related questions in my Week 1 questions list?
 
    [ ] YES - Question #(s): ___________
-   [ ] NO - But I'll check anyway
+   [x] NO - But I'll check anyway
 
 
 3. Think about consequences:
 
    If I remove duplicates, what am I assuming?
-   
+   That is has copied the data, that it isnt a seperate value toward the dataset
    
    If duplicates are actually repeated measures, what should I do instead?
    [ ] Keep them - they're legitimate observations
-   [ ] Flag them for later analysis that accounts for non-independence
+   [x] Flag them for later analysis that accounts for non-independence
    [ ] Other: ___________
    
    
@@ -180,7 +180,7 @@ CONNECTING TO MY DATA:
 TUTORIAL 5: NUMERIC & CROSS-VARIABLE CONSISTENCY - APPLICATION CHECKLIST
 ================================================================================
 
-[ ] I completed the tutorial exercises
+[x] I completed the tutorial exercises
 
 
 PART A: NUMERIC PLAUSIBILITY
@@ -188,25 +188,25 @@ PART A: NUMERIC PLAUSIBILITY
 
 1. Did I identify any numeric plausibility questions in my Week 1 questions list?
 
-   [ ] YES - Question #(s): ___________
+   [x] YES - Question #(s): some values sitting at extreme negative amounts 
    [ ] NO - Skip to Part B
 
 
 2. If YES, which numeric variable looks suspicious?
 
-   Variable name: ___________
+   Variable name: body_mass
    
-   Minimum value: _____  | Is this biologically possible? [ ] Yes [ ] No [ ] Unsure
-   Maximum value: _____  | Is this biologically possible? [ ] Yes [ ] No [ ] Unsure
+   Minimum value: -93  | Is this biologically possible? [ ] Yes [x] No [ ] Unsure
+   Maximum value: 108.71  | Is this biologically possible? [x] Yes [] No [ ] Unsure
    
 
    Why do these look wrong?
-   [ ] Negative value (impossible for this measurement)
+   [x] Negative value (impossible for this measurement)
    [ ] Zero (should be NA instead)
    [ ] Too large (exceeds known biological maximum)
    [ ] Too small (below known biological minimum)
    [ ] Possible units confusion (mixed kg and g?)
-   [ ] Other: ___________
+   [x] Other: typo during input of data on excel sheet
 
 
 
@@ -216,14 +216,14 @@ PART B: CROSS-VARIABLE CONSISTENCY
 4. Did I identify any cross-variable questions in my Week 1 questions list?
 
    [ ] YES - Question #(s): ___________
-   [ ] NO - But I'll check anyway
+   [x] NO - But I'll check anyway
 
 
 5. Choose TWO variables that should be related (e.g., body length and body mass,
    sex and reproductive status, species and location):
 
-   Variable 1: ___________
-   Variable 2: ___________
+   Variable 1: body length and body mass
+   Variable 2: sex and reproductive status
    
    What relationship do I expect between them?
    [ ] Positive correlation (both increase together)
