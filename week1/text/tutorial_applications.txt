@@ -94,20 +94,18 @@ CONNECTING TO MY DATA:
 
    What assumption am I making about date format?
    (e.g., "01/12/2023 is DD/MM/YYYY not MM/DD/YYYY")
-   I could be in american date standards - MM/DD or vice versa, there is no way of knowing without looking at the whole dataset
-   
+  
    What could go wrong if this assumption is incorrect?
-   Data is placed under the wrong dates and could potenitally mess up the basis of the scientific study (looking at a species over multiple days)
-   
+  
    How could I verify my assumption is correct?
-   Not sure 
+   
 
 
 5. If this tutorial is NOT relevant to my data:
 
    Why not?
    [ ] I don't have any date variables
-   [ ] My dates are already in proper format
+   [x] My dates are already in proper format
    [ ] My date issues are different from what this tutorial covers
    [ ] Other: ___________
 
@@ -132,20 +130,20 @@ CONNECTING TO MY DATA:
 
 2. Which variables have the most missing data?
 
-   Variable: ___________ | Percent missing: _____%
-   Variable: ___________ | Percent missing: _____%
-   Variable: ___________ | Percent missing: _____%
+   Variable: body_mass = 15 | Percent missing: 7.3%
+   Variable: collector = 13 | Percent missing: 6.3%
+   Variable: Eggs-laid = 16 
+              Eggs-hatched = 16 | Percent missing: 7.8%
 
 
 3. Missingness types checklist
 
-
    [ ] MCAR (Missing Completely At Random) - appears random/scattered
-   [x] MAR (Missing At Random) - related to other observed variables
-   [ ] MNAR (Missing Not At Random) - related to the missing value itself
+   [ ] MAR (Missing At Random) - related to other observed variables
+   [x] MNAR (Missing Not At Random) - related to the missing value itself
 
 Why is it important to know what type of missing data we have? 
-Determines how you go about fixing it with code
+Determines how you go about fixing it with code / no fixing required as data not obtained during observations?
 ===============================================================
 
 ================================================================================
@@ -167,7 +165,8 @@ CONNECTING TO MY DATA:
 3. Think about consequences:
 
    If I remove duplicates, what am I assuming?
-   That is has copied the data, that it isnt a seperate value toward the dataset
+   That is has copied the data, that it isnt a seperate value toward the dataset. 
+   If it has copied the whole row then this is a duplicate
    
    If duplicates are actually repeated measures, what should I do instead?
    [ ] Keep them - they're legitimate observations
@@ -188,7 +187,7 @@ PART A: NUMERIC PLAUSIBILITY
 
 1. Did I identify any numeric plausibility questions in my Week 1 questions list?
 
-   [x] YES - Question #(s): some values sitting at extreme negative amounts 
+   [x] YES - Question #(s): 4. some values sitting at extreme negative amounts 
    [ ] NO - Skip to Part B
 
 
@@ -206,7 +205,7 @@ PART A: NUMERIC PLAUSIBILITY
    [ ] Too large (exceeds known biological maximum)
    [ ] Too small (below known biological minimum)
    [ ] Possible units confusion (mixed kg and g?)
-   [x] Other: typo during input of data on excel sheet
+   [ ] Other: 
 
 
 
@@ -223,17 +222,18 @@ PART B: CROSS-VARIABLE CONSISTENCY
    sex and reproductive status, species and location):
 
    Variable 1: body length and body mass
-   Variable 2: sex and reproductive status
+   Variable 2: sex and reproductive status??
    
    What relationship do I expect between them?
-   [ ] Positive correlation (both increase together)
+   [x] Positive correlation (both increase together)
    [ ] Negative correlation (one increases, other decreases)
    [ ] Biological constraint (certain combinations impossible)
    [ ] Spatial constraint (certain combinations shouldn't occur)
    [ ] Other: ___________
    
    Describe the expected relationship:
-   
+   Body length and mass should increase or decrease with another 
+
 
 
 6. Think about consequences:
@@ -241,11 +241,13 @@ PART B: CROSS-VARIABLE CONSISTENCY
    If these variables are inconsistent, what should I do?
    [ ] Remove the observations
    [ ] Convert one variable to NA (which one? _________)
-   [ ] Flag for review but keep both
-   [ ] Query the data collector
+   [x] Flag for review but keep both
+   [x] Query the data collector
    [ ] Other: ___________
    
    Justification:
+   Depends on the data column it is under? - so flagging best
+   Could also be a mistake when inputting data to dataset
    
 
 

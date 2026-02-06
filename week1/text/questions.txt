@@ -1,14 +1,14 @@
 How does GitHub track everything in RStudio?
 
-# Observations ====
+
 # Your observations (add as comments below):
-# - What biological system is this?
-#   Female Mosquito fecundity (how age, body mass influence egg laying and hatching rate)
-# - What's being measured?
-#   Egg laying and hatching success?
-# - How many observations?
-#   205 rows, 9 variables 
-# - Anything surprising?
-#   Body mass value sitting at -93. 
-# - Any obvious problems?
-#   Lots of N/A values throughout multiple columns, inconsistent dash work and capitalisation
+1. What biological system is this?
+      Female Mosquito fecundity (how age, body mass influence egg laying and hatching rate)
+2. What's being measured?
+      Egg laying and hatching success?
+3. How many observations?
+      205 rows, 9 variables 
+4. Anything surprising?
+      Body mass value sitting at -93. 
+5. Any obvious problems?
+      Lots of N/A values throughout multiple columns, inconsistent dash work and capitalisation
