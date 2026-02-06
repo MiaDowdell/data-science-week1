@@ -69,7 +69,7 @@ mosquito_egg_data_step1 <- mosquito_egg_data|>
     .default = as.character(treatment)
   ))
 
-mosquito_egg_data_step2 <- mosquito_egg_data|>
+mosquito_egg_data_step2 <- mosquito_egg_data_step1|>
   mutate(site = case_when(
     site == "Site_A" ~ "site_a",
     site == "Site A" ~ "site_a",
@@ -85,8 +85,6 @@ mosquito_egg_data_step2 <- mosquito_egg_data|>
   
   # Verify it worked: 
   # [Code to check change happened]
-
-view(mosquito_egg_data_step1)
 
 view(mosquito_egg_data_step2)
   
@@ -108,7 +106,7 @@ mosquito_egg_data|>
 
 # Fix it:
 # YOUR CODE
-mosquito_flagged <- mosquito_egg_data|>
+mosquito_flagged <- mosquito_egg_data_step2|>
   mutate(
     flag_impossible = case_when(
       body_mass_mg <= 0 ~ "negative_or_zero_mass", 
@@ -129,13 +127,19 @@ mosquito_flagged <- mosquito_egg_data|>
     any_flag = !is.na(flag_impossible) | !is.na(flag_implausible) |
                 !is.na(flag_id_weight)
   )
-  
+
   # Verify it worked: 
   # [Code]
 
+mosquito_flagged|>
+    summarise(
+      n_impossible = sum(!is.na(flag_impossible)),
+      n_implausible = sum(!is.na(flag_implausible)),
+      n_id_weight = sum(!is.na(flag_id_weight)),
+      total_flagged = sum(any_flag)
+    )
+
   view(mosquito_flagged)
-  mosquito_egg_data_step3 <- mosquito_flagged
-  view(mosquito_egg_data_step3)
 
   # What changed and why it matters: 
   # [2-3 sentences]

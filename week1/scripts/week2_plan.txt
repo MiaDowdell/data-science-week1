@@ -48,7 +48,7 @@ QUESTIONS TO DISCUSS IN WEEK 2
 -------------------------------
 Things I'm still unsure about:
 
-1. 
+1. Why during flagging of flag_id_weight, female_id 98 is the only one being highlighted when code asks for all 3 negative inputs?
 
 2. 
 
