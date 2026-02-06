@@ -9,7 +9,7 @@ library(naniar)
 library(janitor)
 library(skimr)
 # Load data ====
-mosquito_egg_raw <- read_csv(here("week1/data", "mosquito_egg_data.csv"),
+mosquito_egg_data <- read_csv(here("week1/data", "mosquito_egg_data.csv"),
                              name_repair = janitor::make_clean_names)
 
 # Basic overview ====
@@ -82,8 +82,6 @@ mosquito_egg_data_step2 <- mosquito_egg_data|>
     site == "Site-C" ~ "site_C",
     .default = as.character(site)
   ))
-
-mosquito_egg_data_step1 <- mosquito_egg_data_step2
   
   # Verify it worked: 
   # [Code to check change happened]
@@ -92,26 +90,56 @@ view(mosquito_egg_data_step1)
 
 view(mosquito_egg_data_step2)
   
-  # What changed and why it matters: all values changed to lowercase  
+  # What changed and why it matters: 
   # [2-3 sentences explaining consequences]
-  # 
-  
-  
-  # FIX 2: [Biological impossibilities]  ====
+  # All values within treatment now read as "low_dose, medium_dose and high_dose" as with site - "site_a, site_b, and site_c
+    # this is important as this groups the data into just three groups within its column instead of multiple due to spelling/typo errors.
+    # meaning that data now sits where it needs to, making visualisation in graphs/plots much easier 
+
+
+
+# FIX 2: [Biological impossibilities]  ====
 
 # Show the problem: 
 # [Code]
 
+mosquito_egg_data|>
+  filter(body_mass_mg <= 0)
+
 # Fix it:
-mosquito_egg_data_step3 <- mosquito_egg_data_step2 |>
-  
-  # YOUR CODE
-  
+# YOUR CODE
+mosquito_flagged <- mosquito_egg_data|>
+  mutate(
+    flag_impossible = case_when(
+      body_mass_mg <= 0 ~ "negative_or_zero_mass", 
+      TRUE ~ NA_character_
+    ),
+    flag_implausible = case_when(
+      body_mass_mg < -93.0 ~ "impossible_weight",
+      body_mass_mg < -87.2 ~ "impossible_weight",
+      body_mass_mg < -56.8 ~ "impossible_weight",
+      TRUE ~ NA_character_
+    ), 
+    flag_id_weight = case_when(
+      female_id == "184" & body_mass_mg < -93.0 ~ "184_impossible_weight",  #Only flagging 98?
+      female_id == "109" & body_mass_mg < -87.2 ~ "109_impossible_weight",
+      female_id == "98" & body_mass_mg < -56.8 ~ "98_impossible_weight",
+      TRUE ~ NA_character_
+    ),
+    any_flag = !is.na(flag_impossible) | !is.na(flag_implausible) |
+                !is.na(flag_id_weight)
+  )
   
   # Verify it worked: 
   # [Code]
-  view(mosquito_egg_data)
-  
-  # What changed and why it matters:
+
+  view(mosquito_flagged)
+  mosquito_egg_data_step3 <- mosquito_flagged
+  view(mosquito_egg_data_step3)
+
+  # What changed and why it matters: 
   # [2-3 sentences]
-  #
+  # The negative body weights have now been flagged in the data set as impossible values to go back and review. This could be a simple
+  # typo mistake when inputting the data which ca be resolved in the excel sheet or in R (not sure of the function to do this).
+  
+  
