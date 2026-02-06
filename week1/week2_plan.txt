@@ -1,0 +1,55 @@
+WEEK 2 CLEANING PLAN
+====================
+Name: [Mia Dowdell]
+Date: [06/02/2026]
+
+I've completed all 5 tutorials and application checklists.
+
+Looking across all my checklists, these are the 2 most important issues 
+to address in Week 2:
+
+
+ISSUE 1 (Most Important)
+-------------------------
+Brief description: [string-related inconsistencies (capitalisation and typos)]
+
+Which tutorial provides the solution: [3 - strings]
+
+Which variable(s) affected: [site, treatment]
+
+Why this is important to fix: [Ensure consistent data and can be visualised]
+
+What I plan to do: [Fix capitalisation mistakes to group treatment correctly, fix dash typos on body_mass values as biologically impossible]
+
+
+
+ISSUE 2 (Second Most Important)
+--------------------------------
+Brief description: [Biological impossibilities]
+
+Which tutorial provides the solution: [7.1 check data consistency]
+
+Which variable(s) affected: [body_mass_ng]
+
+Why this is important to fix: [data most likely correct but typo = makes it wrong]
+
+What I plan to do: [check data through basic range checks, filter data to identify impossible values, and flag for later correction]
+
+
+
+OTHER ISSUES I NOTICED (but won't fix in Week 2)
+-------------------------------------------------
+- [Issue 3 - NA values in collector column]
+- [Issue 4 - ]
+- [Issue 5 - ]
+
+
+QUESTIONS TO DISCUSS IN WEEK 2
+-------------------------------
+Things I'm still unsure about:
+
+1. 
+
+2. 
+
+3.
